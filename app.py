@@ -14,7 +14,7 @@ def about():  # put application's code here
     return render_template('about.html')
 
 @app.route('/about-css')
-def about():  # put application's code here
+def about_css():  # put application's code here
     return render_template('about-css.html')
 
 if __name__ == '__main__':

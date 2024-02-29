@@ -30,7 +30,7 @@ p.big-blue{
 }
 
 /* Rule 6: Named CSS rule block for img tags */
-.img {
+img.logo{
     width: 267px;
     height: 72px;
 }
