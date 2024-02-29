@@ -1,0 +1,36 @@
+/* Rule 1: Style all paragraphs */
+p {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Rule 2: Style all level two headers */
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #990000;
+}
+
+/* Rule 3: Style all tables */
+table {
+    border-color: black;
+    border-width: 2px;
+    border-collapse: collapse;
+}
+
+/* Rule 4: Style paragraph with id */
+p#bold-red {
+    font-style: italic;
+    color: red;
+}
+
+/* Rule 5: Create a new CSS rule block based on a class attribute */
+p.big-blue{
+    font-size:2em;
+    color: #6666ff;
+}
+
+/* Rule 6: Named CSS rule block for img tags */
+.img {
+    width: 267px;
+    height: 72px;
+}
