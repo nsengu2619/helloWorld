@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block page_contact %}
+        <h1> Contact Me</h1>
+        {% if form_submitted %}
+        <div class="col-12">
+             <h2> Thank you for completing my form!</h2>
+        </div>
+        <div class="col-md-6">
+            <p> First Name:</p>
+          </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('first_name')}}</p>
+          </div>
+        <div class="col-md-6">
+            <p> Last Name: </p>
+         </div>
+
+        <div class="col-md-6">
+            <p> {{ request.form.get('last_name')}}</p>
+          </div>
+        <div class="col-md-6">
+            <p> Email: </p>
+         </div>
+        <div class="col-md-6">
+            <p> {{ request.form.get('email')}}</p>
+          </div>
+        <div class="col-md-6">
+            <p> Agree to be contacted: </p>
+         </div>
+
+        <div class="col-md-6">
+            <p> {{ 'Yes' if request.form.get('agree_check') else 'No'}}</p>
+          </div>
+
+<p><a href="{{ url_for('contact')}}"> Complete form again </a></p>
+
+{% else %}
+    <form class="row g-3" action="{{ url_for('contact')}}" method="post">
+    <div class="col-md-6">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="first_name" >
+    </div>
+    <div class="col-md-6">
+      <label for="last_name" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="last_name" >
+    </div>
+
+    <div class="col-12">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="email" >
+    </div>
+
+    <div class="col-12">
+        <div class ="form-check">
+            <input class="form-check-input" type="checkbox" id="agree_check" name="agree_check">
+            <label class="form-check-input" for="agree_check">
+                I agree to be contacted
+            </label>
+        </div>
+    </div>
+        <div class="col-12">
+             <button class="btn btn-primary" type="submit">Submit Form</button>
+    </div>
+        </form>
+{% endif %}
+{% endblock %}
+</body>
+</html>
